@@ -98,26 +98,6 @@ class BruteForceSearch
     }
 
     /**
-     * 現在の位置のブロックの値を取得する
-     */
-    protected function getBlock($line_key, $row_key) 
-    {
-        list($block_line_key, $block_row_key) = $this->getBlockKey($line_key, $row_key);
-        return $this->block_array[$block_line_key][$block_row_key];
-    }
-
-    /**
-     * 指定のマスの所属するブロックのキーを返却
-     */
-    protected function getBlockKey($line_key, $row_key)
-    {
-        $block_line_key = floor($line_key / $this->block);
-        $block_row_key = floor($row_key / $this->block);
-
-        return [$block_line_key, $block_row_key];
-    }
-
-    /**
      * 毎回検索するのが大変なので各ブロックごとの配列を最初に作成しておく
      */
     protected function createBlock()
@@ -154,6 +134,27 @@ class BruteForceSearch
         $search_key = array_search($num, $this->block_array[$block_line_key][$block_row_key]);
         $this->block_array[$block_line_key][$block_row_key][$search_key] = $answer_num;
     }
+
+    /**
+     * 現在の位置のブロックの値を取得する
+     */
+    protected function getBlock($line_key, $row_key) 
+    {
+        list($block_line_key, $block_row_key) = $this->getBlockKey($line_key, $row_key);
+        return $this->block_array[$block_line_key][$block_row_key];
+    }
+
+    /**
+     * 指定のマスの所属するブロックのキーを返却
+     */
+    protected function getBlockKey($line_key, $row_key)
+    {
+        $block_line_key = floor($line_key / $this->block);
+        $block_row_key = floor($row_key / $this->block);
+
+        return [$block_line_key, $block_row_key];
+    }
+
 
     /**
      * 要素のチェック
