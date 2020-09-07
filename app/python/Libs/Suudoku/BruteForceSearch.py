@@ -12,7 +12,6 @@ class BruteForceSearch:
         self.createBlock()
         self.length = len(rule) - 1
 
-
     def Calculation(self, line_key, row_key):
         if self.length < line_key:
             # 行が9になったら終了
@@ -44,7 +43,6 @@ class BruteForceSearch:
 
             return False
     
-
     def nextCalculation(self, line_key, row_key):
         """
         次のマスに移動する
@@ -60,7 +58,6 @@ class BruteForceSearch:
                 return True
     
         return False
-
 
     def searchPossibleValues(self, line_key, row_key):
         """
@@ -163,4 +160,3 @@ class BruteForceSearch:
                 
             if self.length == line_key:
                 print('|-----------------------|')
-            

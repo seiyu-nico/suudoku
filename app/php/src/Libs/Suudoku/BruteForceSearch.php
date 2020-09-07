@@ -75,12 +75,6 @@ class BruteForceSearch
         return false;
     }
 
-
-    // ここから下はSuudokuBaseにかかれている内容
-    // Prediction.phpを作ったが解けない問題が多いので
-    // せっかく作ったファイルなのでおいておくがないものとして扱うので
-    // 継承を使わないようにしてある
-
     /**
      * 縦横ブロックのそれぞれを1~9との差分を取り、縦横ブロックの共通項を取得
      */
@@ -112,6 +106,9 @@ class BruteForceSearch
         return $this->block_array[$block_line_key][$block_row_key];
     }
 
+    /**
+     * 指定のマスの所属するブロックのキーを返却
+     */
     protected function getBlockKey($line_key, $row_key)
     {
         $block_line_key = floor($line_key / $this->block);
@@ -119,7 +116,6 @@ class BruteForceSearch
 
         return [$block_line_key, $block_row_key];
     }
-
 
     /**
      * 毎回検索するのが大変なので各ブロックごとの配列を最初に作成しておく
