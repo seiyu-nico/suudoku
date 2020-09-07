@@ -122,6 +122,9 @@ class BruteForceSearch:
         return self.block_list[block_line_key][block_row_key]
 
     def getBlockKey(self, line_key, row_key):
+        """
+        指定のマスの所属するブロックのキーを返却
+        """
         block_line_key = int(line_key / self.block)
         block_row_key = int(row_key / self.block)
 
