@@ -1,0 +1,28 @@
+version: '3.5'
+services:
+  php:
+    build: ./docker/php
+    container_name: suudoku_php
+    volumes:
+      - app_php:/code
+    environment:
+      TZ: Asia/Tokyo
+  py:
+    build: ./docker/python
+    container_name: suudoku_python
+    volumes:
+      - app_py:/code
+    environment:
+      TZ: Asia/Tokyo
+    tty: true
+volumes:
+  app_php:
+    driver_opts:
+      type: none
+      device: $PWD/app/php
+      o: bind
+  app_py:
+    driver_opts:
+      type: none
+      device: $PWD/app/python
+      o: bind

@@ -1,0 +1,14 @@
+{
+    "name": "seiyu/Suudoku",
+    "authors": [
+        {
+            "name": "Seiyu",
+            "email": "yuseiishii141@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Seiyu\\": "src/"
+      }
+    }
+}
