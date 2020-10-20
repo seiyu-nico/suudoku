@@ -5,7 +5,7 @@ require_once(dirname(__FILE__) . '/bootstrap/autoload.php');
 use Seiyu\Libs\Suudoku\BruteForceSearch;
 
 // 解きたい問題のファイル名を設定
-$file_name = '001.csv';
+$file_name = '005.csv';
 
 // 問題取得
 $problem = getProblem($file_name);

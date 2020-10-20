@@ -6,7 +6,7 @@ from Libs.Suudoku.BruteForceSearch import BruteForceSearch
 from Libs import functions
 
 # 解きたい問題のファイル名
-file_name = '001.csv'
+file_name = '005.csv'
 
 # 問題取得
 problem = functions.getProblem(file_name)

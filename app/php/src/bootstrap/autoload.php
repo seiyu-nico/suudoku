@@ -9,7 +9,7 @@ require_once(dirname(__FILE__) . '/../../vendor/autoload.php');
 function getProblem($file_name)
 {
     $problem = [];
-    $f = fopen('./problem/' . $file_name, "r");
+    $f = fopen('/problem/' . $file_name, "r");
     while($line = fgetcsv($f)){
         $problem[] = $line;
     }

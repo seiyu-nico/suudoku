@@ -5,6 +5,7 @@ services:
     container_name: suudoku_php
     volumes:
       - app_php:/code
+      - app_problem:/problem
     environment:
       TZ: Asia/Tokyo
   py:
@@ -12,10 +13,16 @@ services:
     container_name: suudoku_python
     volumes:
       - app_py:/code
+      - app_problem:/problem
     environment:
       TZ: Asia/Tokyo
     tty: true
 volumes:
+  app_problem:
+    driver_opts:
+      type: none
+      device: $PWD/problem
+      o: bind
   app_php:
     driver_opts:
       type: none
